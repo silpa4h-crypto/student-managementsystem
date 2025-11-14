@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="text-center mb-5">
+            <h1 class="display-4"><i class="fas fa-graduation-cap"></i> Smart Student Management System</h1>
+            <p class="lead">Efficiently manage student records with our secure, web-based platform designed for schools and institutes.</p>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-user-plus fa-3x text-primary mb-3"></i>
+                        <h5 class="card-title">Add Students</h5>
+                        <p class="card-text">Easily add new student details including name, course, email, and contact information.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-search fa-3x text-success mb-3"></i>
+                        <h5 class="card-title">View & Search</h5>
+                        <p class="card-text">Browse, search, and filter student records in an intuitive table format.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-edit fa-3x text-warning mb-3"></i>
+                        <h5 class="card-title">Edit & Delete</h5>
+                        <p class="card-text">Update student information or remove records as needed with secure actions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% if not current_user.is_authenticated %}
+        <div class="text-center mt-4">
+            <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg">Get Started</a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
